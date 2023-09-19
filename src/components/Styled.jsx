@@ -18,3 +18,10 @@ export const Inner = styled.div`
 export const FlexGrowBox = styled.div`
   flex-grow: 1;
 `;
+
+export const Header = styled.h1`
+  font-size: 3rem;
+  text-align: center;
+  text-decoration: underline;
+  color: #fff;
+`;

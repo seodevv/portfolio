@@ -29,8 +29,10 @@ article,
 div,
 nav,
 input,
-textarea {
+textarea,
+button {
   box-sizing: border-box;
+  font-family: 'Nanum Pen Script', cursive;
 }
 
 h1,
