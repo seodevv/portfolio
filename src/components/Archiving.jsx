@@ -60,6 +60,9 @@ const Archiving = () => {
                 <li>
                   한편으론 공부 공간으로, 활용했던 API 들을 정리해놓았습니다.
                 </li>
+                <li>
+                  한편으론 공부 공간으로, 활용했던 API 들을 정리해놓았습니다.
+                </li>
               </ul>
             </ArchivingInfo>
           </ArchivingItem>
