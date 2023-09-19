@@ -4,6 +4,7 @@ import Header from './components/Header';
 import AboutMe from './components/AboutMe';
 import Skills from './components/Skills';
 import Archiving from './components/Archiving';
+import Projects from './components/Projects';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <AboutMe />
       <Skills />
       <Archiving />
+      <Projects />
     </>
   );
 };

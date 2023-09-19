@@ -1,18 +1,11 @@
 import styled from 'styled-components';
-import { Inner } from './Styled';
+import { Header, Inner } from './Styled';
 import GITHUB from '../img/github.png';
 
 const StyledArchiving = styled.section`
   padding: 30px;
   width: 100%;
   background: #272727;
-`;
-
-const ArchivingHeader = styled.h1`
-  font-size: 3rem;
-  text-align: center;
-  text-decoration: underline;
-  color: #fff;
 `;
 
 const ArchivingItem = styled.div`
@@ -41,7 +34,7 @@ const Archiving = () => {
   return (
     <>
       <StyledArchiving>
-        <ArchivingHeader>Archiving</ArchivingHeader>
+        <Header>Archiving</Header>
         <Inner display="flex" flexFlow="column wrap" alignItems="center">
           <ArchivingItem>
             <div>
