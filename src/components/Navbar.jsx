@@ -11,6 +11,7 @@ const StyledNavbar = styled.section`
   width: 100dvw;
   height: 55px;
   background: ${(props) => (props.active ? '#fff' : 'transparent')};
+  box-shadow: ${(props) => (props.active ? '0 3px 6px #000' : 'unset')};
   transition: 0.3s all ease-in;
 `;
 

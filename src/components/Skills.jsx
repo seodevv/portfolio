@@ -110,6 +110,11 @@ const Skill = styled.div`
       visibility: visible;
       opacity: 1;
     }
+
+    &:active {
+      transition: none;
+      filter: blur(5px);
+    }
   }
 
   &:hover .spin {

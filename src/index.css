@@ -10,6 +10,18 @@ body {
   font-family: 'Nanum Pen Script', cursive;
 }
 
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track-piece {
+  background: #000;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgb(255, 123, 0);
+}
+
 section,
 article,
 div,
