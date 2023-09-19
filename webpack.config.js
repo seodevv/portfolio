@@ -39,11 +39,6 @@ module.exports = {
           // plugins: ['react-refresh/babel'], // 바벨이 동작할 때 hot 리로딩 기능(react-refresh)을 추가해줌
         },
       },
-      // css loader 설정
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
       // image loader 설정 (webpack 5)
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -53,6 +48,17 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
       },
     ],
   }, // 입력과 출력 사이의 실행할 모듈을 설정(babel-loader)

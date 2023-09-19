@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
 
+$main-color: rgb(255, 123, 0);
+
 html {
   font-size: 16px;
 }
@@ -19,7 +21,7 @@ body::-webkit-scrollbar-track-piece {
 }
 
 body::-webkit-scrollbar-thumb {
-  background: rgb(255, 123, 0);
+  background: $main-color;
 }
 
 section,
