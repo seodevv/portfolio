@@ -8,7 +8,7 @@ const Portfolio = () => {
   return (
     <>
       <Project>
-        <ImgSlide height="600px">
+        <ImgSlide>
           <img src={PORTFOLIO} alt="portfolio" />
         </ImgSlide>
         <Info>

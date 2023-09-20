@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { FlexGrowBox, Inner } from './Styled';
 import { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 const StyledNavbar = styled.section`
   padding: 15px;
@@ -13,6 +15,11 @@ const StyledNavbar = styled.section`
   background: ${(props) => (props.active ? '#fff' : 'transparent')};
   box-shadow: ${(props) => (props.active ? '0 3px 6px #000' : 'unset')};
   transition: 0.3s all ease-in;
+
+  @media screen and (max-width: 800px) {
+    background: #fff;
+    transition: none;
+  }
 `;
 
 const MainLogo = styled.h1`
@@ -27,6 +34,14 @@ const MainLogo = styled.h1`
   &:active {
     filter: blur(1px);
   }
+
+  @media screen and (max-width: 800px) {
+    color: #000;
+
+    &:hover {
+      text-shadow: unset;
+    }
+  }
 `;
 
 const NavbarMenus = styled.div`
@@ -35,6 +50,7 @@ const NavbarMenus = styled.div`
     margin: 0 1rem;
     font-size: 1.5rem;
     color: ${(props) => (props.active ? 'rgb(230, 72, 10)' : '#aaa')};
+    cursor: pointer;
 
     &:hover {
       color: #fff;
@@ -45,10 +61,57 @@ const NavbarMenus = styled.div`
       filter: blur(1px);
     }
   }
+
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
 `;
 
-const Navbar = () => {
+const MobileMenu = styled(FontAwesomeIcon)`
+  display: none;
+
+  @media screen and (max-width: 800px) {
+    margin-right: 10px;
+    display: block;
+    font-size: 2rem;
+
+    &:active {
+      color: rgba(255, 123, 0);
+    }
+  }
+`;
+
+const MobileDropdown = styled.section`
+  padding: 0;
+  position: fixed;
+  top: 55px;
+  left: 0;
+  z-index: 998;
+  width: 100dvw;
+  max-height: 0;
+  background: #fff;
+  overflow: hidden;
+  transition: 0.3s all ease;
+
+  li {
+    font-size: 1.7rem;
+
+    &:hover {
+      color: rgba(255, 123, 0);
+    }
+
+    &:active {
+      color: rgba(255, 123, 0);
+      filter: blur(1px);
+    }
+  }
+`;
+
+const Navbar = ({ onScroll }) => {
   const [active, setActive] = useState(false);
+  const menus = ['about me', 'skills', 'archiving', 'projects', 'contact'];
+
+  const [dropdown, setDropdown] = useState(false);
 
   useEffect(() => {
     const scrollListener = () => {
@@ -73,17 +136,50 @@ const Navbar = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <MainLogo active={active}>Seodev's Portfolio</MainLogo>
+          <MainLogo
+            active={active}
+            onClick={() => {
+              onScroll('top');
+            }}
+          >
+            Seodev's Portfolio
+          </MainLogo>
           <FlexGrowBox />
+          <MobileMenu
+            icon={faBars}
+            onClick={() => {
+              setDropdown((prev) => !prev);
+            }}
+          />
           <NavbarMenus active={active}>
-            <span>About me</span>
-            <span>Skills</span>
-            <span>Archiving</span>
-            <span>Projects</span>
-            <span>Contact</span>
+            {menus.map((menu) => (
+              <span
+                key={menu}
+                onClick={() => {
+                  const id = menu.replace(/\s/, '');
+                  onScroll(id);
+                }}
+              >
+                {menu.replace(/^[a-z]/, (c) => c.toUpperCase())}
+              </span>
+            ))}
           </NavbarMenus>
         </Inner>
       </StyledNavbar>
+      <MobileDropdown className={dropdown && 'dropdown-active'}>
+        {menus.map((menu) => (
+          <li
+            key={menu}
+            onClick={() => {
+              const id = menu.replace(/\s/, '');
+              onScroll(id);
+              setDropdown(false);
+            }}
+          >
+            {menu.replace(/^[a-z]/, (c) => c.toUpperCase())}
+          </li>
+        ))}
+      </MobileDropdown>
     </>
   );
 };

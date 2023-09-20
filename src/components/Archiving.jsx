@@ -18,6 +18,14 @@ const ArchivingItem = styled.div`
   img {
     max-width: 50%;
   }
+
+  @media screen and (max-width: 800px) {
+    width: 70%;
+  }
+
+  @media screen and (max-width: 578px) {
+    width: 100%;
+  }
 `;
 
 const ArchivingInfo = styled.div`
@@ -28,12 +36,18 @@ const ArchivingInfo = styled.div`
   a {
     color: #1e62f7;
   }
+
+  @media screen and (max-width: 578px) {
+    ul {
+      padding-left: 15px;
+    }
+  }
 `;
 
 const Archiving = () => {
   return (
     <>
-      <StyledArchiving>
+      <StyledArchiving id="archiving">
         <Header>Archiving</Header>
         <Inner display="flex" flexFlow="column wrap" alignItems="center">
           <ArchivingItem>

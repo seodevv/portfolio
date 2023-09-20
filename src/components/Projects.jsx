@@ -16,6 +16,10 @@ export const Project = styled.div`
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
+
+  @media screen and (max-width: 800px) {
+    width: 100%;
+  }
 `;
 
 export const ImgSlide = styled.div`
@@ -31,6 +35,10 @@ export const ImgSlide = styled.div`
     min-width: 100%;
     transition: 0.3s all ease-in;
     object-fit: contain;
+  }
+
+  @media screen and (max-width: 800px) {
+    max-height: 450px;
   }
 `;
 
@@ -90,7 +98,6 @@ export const Info = styled.div`
   p {
     padding-bottom: 10px;
     font-size: 1.5rem;
-    border-bottom: 1px solid #aaa;
   }
 
   strong {
@@ -150,6 +157,23 @@ export const InfoIcons = styled.div`
   .btn-effect {
     cursor: pointer;
   }
+
+  @media screen and (max-width: 540px) {
+    div {
+      margin: 5px;
+      width: calc(50% - 15px);
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .big {
+      max-width: 500px;
+    }
+
+    .demo {
+      width: 100%;
+    }
+  }
 `;
 
 export const Features = styled.div`
@@ -164,6 +188,10 @@ export const Features = styled.div`
 
   img + img {
     margin-left: 10px;
+
+    @media screen and (max-width: 540px) {
+      margin-left: 5px;
+    }
   }
 
   p {
@@ -176,7 +204,7 @@ export const Features = styled.div`
 const Projects = () => {
   return (
     <>
-      <StyledProjects>
+      <StyledProjects id="projects">
         <Header>Projects</Header>
         <Inner display="flex" flexFlow="column nowrap" alignItems="center">
           <MineSweeper />
