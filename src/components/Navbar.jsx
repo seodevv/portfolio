@@ -80,7 +80,7 @@ const Navbar = () => {
             <span>Skills</span>
             <span>Archiving</span>
             <span>Projects</span>
-            <span>Career</span>
+            <span>Contact</span>
           </NavbarMenus>
         </Inner>
       </StyledNavbar>
