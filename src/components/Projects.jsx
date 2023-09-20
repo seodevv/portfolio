@@ -3,6 +3,7 @@ import { Header, Inner } from './Styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import MineSweeper from './projects/MineSweeper';
 import Tikitaka from './projects/Tikitaka';
+import Portfolio from './projects/Portfolio';
 
 const StyledProjects = styled.section`
   padding: 30px;
@@ -180,6 +181,7 @@ const Projects = () => {
         <Inner display="flex" flexFlow="column nowrap" alignItems="center">
           <MineSweeper />
           <Tikitaka />
+          <Portfolio />
         </Inner>
       </StyledProjects>
     </>

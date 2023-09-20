@@ -61,8 +61,9 @@ const Tikitaka = () => {
     <>
       <Project>
         <ImgSlide height="600px">
-          {images.map((img) => (
+          {images.map((img, i) => (
             <img
+              key={i}
               src={img}
               alt="minesweeper"
               style={{ transform: `translateX(-${cur * 100}%)` }}
@@ -87,6 +88,7 @@ const Tikitaka = () => {
           <Contoller>
             {images.map((_, i) => (
               <FontAwesomeIcon
+                key={i}
                 className={cur === i ? 'select' : ''}
                 icon={faCircle}
                 onClick={() => onClickController(i)}

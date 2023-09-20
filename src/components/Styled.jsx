@@ -23,5 +23,5 @@ export const Header = styled.h1`
   font-size: 3rem;
   text-align: center;
   text-decoration: underline;
-  color: #fff;
+  color: ${(props) => (props.color ? props.color : '#fff')};
 `;
