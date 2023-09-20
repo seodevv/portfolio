@@ -54,6 +54,10 @@ const StyledHeader = styled.section`
       border-right: 3px solid transparent;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    padding-top: 0;
+  }
 `;
 
 const Divide = styled.div`
@@ -65,7 +69,7 @@ const Divide = styled.div`
 
 const RelativeBox = styled.div`
   position: relative;
-  width: 450px;
+  width: 445px;
   height: 2rem;
   text-align: center;
   font-size: 2rem;
@@ -80,6 +84,17 @@ const RelativeBox = styled.div`
     border-right: 1px solid #fff;
     overflow: hidden;
     animation: typing 5s steps(31) infinite;
+  }
+
+  @media screen and (max-width: 800px) {
+    width: 420px;
+  }
+
+  @media screen and (max-width: 540px) {
+    width: 280px;
+    p:after {
+      content: '저는 Front-end 웹 개발자입니다.';
+    }
   }
 
   @keyframes typing {
@@ -124,7 +139,7 @@ const DownIcon = styled(FontAwesomeIcon)`
   margin-left: 5px;
 `;
 
-const Header = () => {
+const Header = ({ onScroll }) => {
   return (
     <>
       <StyledHeader>
@@ -142,7 +157,11 @@ const Header = () => {
           <RelativeBox>
             <p></p>
           </RelativeBox>
-          <Button>
+          <Button
+            onClick={() => {
+              onScroll('aboutme');
+            }}
+          >
             더 알아보기
             <DownIcon icon={faCaretDown} />
           </Button>

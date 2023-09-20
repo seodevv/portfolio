@@ -138,7 +138,7 @@ const Skill = styled.div`
 const Skills = () => {
   return (
     <>
-      <StyledSkills>
+      <StyledSkills id="skills">
         <Inner>
           <SkillsHeader>SKILLS</SkillsHeader>
           <Inner

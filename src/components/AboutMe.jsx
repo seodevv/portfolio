@@ -52,14 +52,27 @@ const StyledAboutMe = styled.section`
       margin-top: 10px;
     }
   }
+
+  @media screen and (max-width: 800px) {
+    flex-flow: column nowrap;
+
+    > div:nth-child(2) {
+      margin: 15px 0 0 0;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+    }
+  }
 `;
 
 const StyledInfo = styled.section`
+  margin: auto;
   padding: 30px;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   width: 100%;
+  max-width: 1000px;
 `;
 
 const InfoItem = styled.div`
@@ -69,6 +82,14 @@ const InfoItem = styled.div`
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 800px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 540px) {
+    width: 100%;
+  }
 `;
 
 const Icon = styled(FontAwesomeIcon)`
@@ -99,7 +120,7 @@ const Content = styled.div`
 const AboutMe = () => {
   return (
     <>
-      <StyledAboutMe>
+      <StyledAboutMe id="aboutme">
         <div>
           <h1>ABOUT</h1>
           <h1 className="underline btn-effect">ME</h1>
