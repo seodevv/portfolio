@@ -16,6 +16,7 @@ const StyledNavbar = styled.section`
 `;
 
 const MainLogo = styled.h1`
+  font-size: 2rem;
   color: ${(props) => (props.active ? '#000' : '#fff')};
   text-shadow: 0 0 10px #eee;
 
